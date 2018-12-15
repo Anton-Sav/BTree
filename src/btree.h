@@ -303,6 +303,9 @@ public:
          */
         void writePage();
 
+        //my method for search inside PageWrapper
+        int searchAll(const Byte* k, std::list<Byte*>& keys);
+
     public: 
         //----<Основные части алгоритма работы над b-деревом>----
         

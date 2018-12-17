@@ -131,6 +131,8 @@ void BaseBTree::insert(const xi::Byte *k)
 
     // TODO: релаизовать студентам!
 
+    if (k == nullptr)
+        return;;
     //create a new root to insert
     UInt newRoot = _rootPageNum;
 
@@ -144,7 +146,7 @@ void BaseBTree::insert(const xi::Byte *k)
 
         _rootPageNum = _rootPage.getPageNum(); //write the new page number as root
 
-        _rootPage.splitChild(0); //split root
+        _rootPage.splitChild(0); //split
 
         _rootPage.readPage(_rootPageNum); //then read the contents of root
 
